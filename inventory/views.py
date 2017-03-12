@@ -21,7 +21,7 @@ def add_patient(request):
         	patient = Patient(firstname=firstname,lastname=lastname,age=age,dob=dob,gender=gender,phone=phone,description=description)
         	patient.save()
 
-        	response_data['result'] = 'Create post successful!'
+        	response_data['result'] = 'Data stored successfully!'
         	return HttpResponse(
             	json.dumps(response_data),
             	content_type="application/json"

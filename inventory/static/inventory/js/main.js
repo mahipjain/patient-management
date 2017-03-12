@@ -1,12 +1,12 @@
 $( document ).ready(function() {
 
 	$('#form-anchor').click(function(){
-		console.log("ghfghjk");
+		// console.log("ghfghjk");
 		$('#patient-info').show();
 		$('#patient-list').hide();
 	});
 	$('#list-anchor').click(function(){
-		console.log("fhgjjk");
+		// console.log("fhgjjk");
 		$('#patient-info').hide();
 		$('#patient-list').show();
 	});
@@ -30,7 +30,6 @@ $( document ).ready(function() {
 });
 
 function formSubmit() {
-	console.log("create post is working!")
 	if(validate()){
 		$.ajax({
 			url : "add_patient/",
@@ -46,15 +45,15 @@ function formSubmit() {
 
 		success : function(json) {
 			$('#patient-form')[0].reset(); 
-			console.log(json); 
-			console.log("success");
+			// console.log(json); 
+			// console.log("success");
 			$("#talk").prepend("<li><strong>"+json.result+"</strong></li>");
 		},
 
 		error : function(xhr,errmsg,err) {
 			$('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
 				" <a href='#' class='close'>&times;</a></div>");
-			console.log(xhr.status + ": " + xhr.responseText);
+			// console.log(xhr.status + ": " + xhr.responseText);
 
 		}
 	});
@@ -66,7 +65,7 @@ function validate(){
 	for (var i = list.length - 1; i >= 0; i--) {
 		list[i].innerHTML = '';
 	}
-	console.log("jhhsfhghklj");
+	// console.log("jhhsfhghklj");
 	var errors = 0;
 	var firstname = $('#firstname').val(),
 	lastname = $('#lastname').val(),
