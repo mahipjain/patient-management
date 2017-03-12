@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'inventory/semantic/semantic.css' %}">
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="{% static 'inventory/semantic/semantic.js' %}"></script>
+  <script type="text/javascript" src="{% static 'inventory/js/main.js' %}"></script>
+</head>
+<body>
+  <div style="width: 50%;margin: auto;">
+  <br>
+  <h1 class="ui center aligned header"><a id="form-anchor">Patient Info Form</a> | <a href="#" id="list-anchor">Patient List</a></h1>
+  <div id="patient-info">
+      <ul id="talk" style="padding: 0px;">
+        <form class="ui form" id="patient-form" method="POST">
+          <div class="field">
+            <label>First Name</label>
+            <input type="text" id="firstname" placeholder="First Name">
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input type="text" id="lastname" placeholder="Last Name">
+          </div>
+          <div class="field">
+            <label>Age</label>
+            <input type="number" id="age" placeholder="Age" required="">
+          </div>
+          <div class="field">
+            <label>Date of birth</label>
+            <input type="date" id="dob" placeholder="Date of birth">
+          </div>
+          <div class="field">
+           <label>Gender</label>
+           <select class="ui dropdown" required="" id="gender">
+            <option value="">Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Phone</label>
+          <input type="tel" id="phone" placeholder="Phone">
+        </div>
+        <div class="field">
+          <label>Description</label>
+          <input type="text" id="description" placeholder="Description">
+        </div>
+      </form>
+      <div id="results"></div>
+      <br>
+      <button class="ui center aligned button fluid primary" id="submit" onclick="validate()">Submit</button>
+    </div>
+    <div id="patient-list" hidden="">
+    <div class="ui input fluid">
+    <input type="text" id="patient-name" onkeyup="search()" placeholder="Search for names..">
+    </div>
+      <table class="ui celled striped table" id="patient-table">
+        <thead>
+          <tr><th colspan="3" class="ui center aligned">
+            Patient List
+          </th>
+          <tr><th class="ui center aligned">
+            Id
+          </th>
+          <th>First Name</th>
+          <th>Last Name</th>
+        </tr></thead>
+        <tbody id="list-body">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
