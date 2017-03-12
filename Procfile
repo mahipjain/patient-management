@@ -1,1 +1,1 @@
-web: gunicorn patientManagement.wsgi
+web: gunicorn patientManagement.wsgi:application --log-file=-
