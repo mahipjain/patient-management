@@ -13,7 +13,7 @@ class Patient(models.Model):
 	age = models.IntegerField()
 	dob = models.DateField()
 	gender = models.CharField(max_length=6, choices=GENDER_CHOICES) 
-	phone = models.IntegerField()
+	phone = models.CharField(max_length=14)
 	description = models.CharField(max_length=200)
 
 	def __str__(self):
