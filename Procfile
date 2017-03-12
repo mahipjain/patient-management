@@ -1,1 +1,1 @@
-web: gunicorn patientManagement.wsgi
+web: ./manage.py runserver
